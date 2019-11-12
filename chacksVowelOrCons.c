@@ -3,6 +3,19 @@
 #include <stdio.h>
 #include <ctype.h>
 
+int checker(array;str type; num){
+for(i=0; i<=num; i++){
+        if(character == array[i]){
+            printf("%c character is %s!", character, type);
+            break;
+        }
+        else
+        {
+            continue;
+        }
+        return 0;
+    }
+
 int main()
 {
     int i;
@@ -16,27 +29,9 @@ int main()
     character = toupper(character);
     
     //Checks among vowels
-    for(i=0; i<=numberOfVowels; i++){
-        if(character == vowels[i]){
-            printf("%c character is vowel!", character);
-            break;
-        }
-        else
-        {
-            continue;
-        }
-    }
-        //Checks among consonants
-    for(i=0; i<=numberOfConsonants; i++){
-        if(character == consonants[i]){
-            printf("%c character is consonant!", character);
-            break;
-        }
-        else
-        {
-            continue;
-        }
-    }
+    checker(vowels; “vowel”; numberOfVowels);
+    //Checks among consonants
+    checker(consonants; “consonants”; numberOfConsonants);
 
     return 0;
 }
