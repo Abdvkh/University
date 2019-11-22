@@ -1,0 +1,51 @@
+//program which check whether number is a vowel or a conconant
+
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int i, t;
+char word[20];
+int vowel = 0, consonant = 0, length, vowelsNum, consonantsNum;
+
+int checker(char array[], char type[], int n, char character, int lettersNum){
+    for(t=0; t<=n; t++){
+        if(character == array[t]){
+            printf("%c character is %s!", character, type);
+            lettersNum += 1;
+            break;
+        }
+    }
+    return lettersNum;
+}
+
+ int main()
+{
+    char vowels[] = "AEUOIY";
+    char consonants[] = "QWRTPSDFGHJKLZXCVBNM";
+    char character;
+
+    printf("Please input the a word and i will count the number of consonants and vowels\n> ");
+    scanf("%s", &word);
+  
+    length = strlen(word);
+    
+    for(i=0; i<length; i++){
+        
+        character = toupper(word[i]);
+        
+        //Checks among vowels
+        vowel = checker(vowels, "vowel", 6, character, vowel);
+        
+        //Checks among consonants
+        consonant = checker(consonants, "consonant", 20, character, consonant);
+    
+    }
+    
+    printf("There are %d vowels and %d consonants in this word", vowel, consonant);
+
+    return 0;
+}
+
+
+//that's all
