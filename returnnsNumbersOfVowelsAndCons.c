@@ -4,14 +4,13 @@
 #include <ctype.h>
 #include <string.h>
 
-int i, t;
-char word[20];
-int vowel = 0, consonant = 0, length, vowelsNum, consonantsNum;
+int t;
+char word[50];
+int vowel = 0, consonant = 0;
 
 int checker(char array[], char type[], int n, char character, int lettersNum){
     for(t=0; t<=n; t++){
         if(character == array[t]){
-            printf("%c character is %s!", character, type);
             lettersNum += 1;
             break;
         }
@@ -21,6 +20,7 @@ int checker(char array[], char type[], int n, char character, int lettersNum){
 
  int main()
 {
+    int length, i;
     char vowels[] = "AEUOIY";
     char consonants[] = "QWRTPSDFGHJKLZXCVBNM";
     char character;
