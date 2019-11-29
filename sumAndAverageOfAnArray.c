@@ -2,28 +2,38 @@
 
 #include <stdio.h>
 
+int function(int inputNumber);
 
 int main(){
-    int sumOfNthNumbers, average, numsArray;
-
+    int sumOfNthNumbers, average, inputNumber;
+    int numsArray;
+    
     printf("Please input the n`th number whose average and sum of the numbers are going to be rerturned:\n>");
-    scanf("%d", &inputNumber[]);
+    scanf("%d", &inputNumber);
 
-    numsArray = makeArray(inputNumber);
-    
-    //sumOfNthNumbers = arraysSum(numsArray);
-    
-    //average = arraysAverage(numsArray);
-    
+    function(inputNumber);
+
 }
 
-int makeArray(int limitation){
-    int i, int numsArray[limitation];
+int function(int limitation){
+    int i, numsArray[limitation], average;
+    int sum = 0;
+    
+    printf("Elements of a function are: \n| ");
     
     for(i=0; i<limitation; i++){
-        numsArray[i] = i;
-        printf(numsArray[i]);
-        }
         
-    return numsArray;
+        numsArray[i] = i+1;
+        sum += numsArray[i];
+        
+        printf("%d | ", numsArray[i]);
+    }
+    
+    average = sum/limitation;
+    
+    printf("\nSum is %d and an average is %d", sum, average);    
+        
+    return numsArray, sum, average;
 }
+
+//that's all
