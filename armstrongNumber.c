@@ -11,13 +11,21 @@ int main(){
     printf("Please input the number whose armstrong will be checked: \n>");
     scanf("%d", &number);
     
-    digits = countDigits(number)
+    digits = countDigits(number);
 }
 
 int countDigits(int number){
-    if(number > 0){
+    int count;
+    
+    while(number!=0){
+        count++;
         
+        number /= 10;
     }
+    
+    printf("Total digits of the number is %d", count);
+    
+    return count;
 }
 
 //that's all
