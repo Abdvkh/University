@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+// #include <string.h>
 
 struct StudentInfo{
         int roll_number;
@@ -14,6 +14,7 @@ int i, j;
 
 int add_new_student ();
 int finder(char student_name[20]);
+int print_info();
 
 int main() {
 
@@ -28,12 +29,12 @@ int main() {
             add_new_student();
         } else if (command == 'f') {
             printf("Please enter the student's name in order to findthe information about him: \n>");
-            scanf("%ch", &student_name);
+            scanf("%s", &student_name);
             finder(student_name);
         };
 
         printf("\nPlease send the letter in order to run some function: \n'a' - to add a new student(max 10 students),\n 'f' - to find the student by its name\ncommand >" );
-        scanf("%ch", &command);
+        scanf("%c", &command);
     };
     return 0;
 }
@@ -56,8 +57,22 @@ int add_new_student() {
 
         printf("\nGrade: ");
         scanf("%s", &students_list[i].grade);
+        break;
     }
 
+    print_info();
+
+    return 0;
+}
+
+int print_info(){
+    int student_number;
+    printf("Enter the number of student: ");
+    scanf("%d", &student_number);
+    printf("\nRoll number: %d", students_list[student_number].roll_number);
+    printf("\nName: %s", students_list[student_number].name);
+    printf("\nGrade: %s",students_list[student_number].grade);
+    
     return 0;
 }
 
