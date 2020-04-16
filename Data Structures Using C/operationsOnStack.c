@@ -1,11 +1,3 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <stdio.h>
 #define MAX 100
 int n; //number of elements
@@ -24,7 +16,7 @@ int main()
 {
     printf("\nDefine the number of elements in stack: ");
     scanf("%d", &size);
-    
+
     printf("\nAvaliable operations on stack with its code:\
     \n\n1 - display elements\
     \n2 - push the given element\
@@ -32,11 +24,11 @@ int main()
     \n4 - return whether array is empty or not\
     \n5 - top of stack\
     \n6 - quit the program");
-    
+
     do {
     printf("\nEnter the code of operation: ");
     scanf("%d", &operation);
-    
+
     switch(operation){
         case 1: display(); break;
         case 2: push(); break;
@@ -45,7 +37,7 @@ int main()
         case 5: top(); break;
         default: printf("\nThere is no such command");
     }
-    
+
     } while (operation != 6);
 
     return 0;
@@ -69,7 +61,7 @@ void display(){
 
 void push(){
     int number;
-    
+
     if(end < size){
         printf("\nEnter the number which you are going to push:");
         scanf("%d", &number);
