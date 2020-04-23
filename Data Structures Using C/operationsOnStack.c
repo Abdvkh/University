@@ -1,6 +1,5 @@
 #include <stdio.h>
 #define MAX 100
-int n; //number of elements
 int end = -1; //lastest element of stack
 int size; //size of stack
 int array[MAX]; //array on which operations going to be done
@@ -12,35 +11,34 @@ void push(); //pushes given element into an array
 void isEmpty(); //returns whether array is empty or not
 void top(); //returns the latest
 
-int main()
-{
-    printf("\nDefine the number of elements in stack: ");
-    scanf("%d", &size);
+int main() {
+   printf("\nDefine the number of elements in stack: ");
+   scanf("%d", &size);
 
-    printf("\nAvaliable operations on stack with its code:\
-    \n\n1 - display elements\
-    \n2 - push the given element\
-    \n3 - pop last element\
-    \n4 - return whether array is empty or not\
-    \n5 - top of stack\
-    \n6 - quit the program");
+   printf("\nAvaliable operations on stack with its code:\
+         \n\n1 - display elements\
+         \n2 - push the given element\
+         \n3 - pop last element\
+         \n4 - return whether array is empty or not\
+         \n5 - top of stack\
+         \n0 - quit the program");
 
-    do {
-    printf("\nEnter the code of operation: ");
-    scanf("%d", &operation);
+   do {
+      printf("\nEnter the code of operation: ");
+      scanf("%d", &operation);
 
-    switch(operation){
-        case 1: display(); break;
-        case 2: push(); break;
-        case 3: pop(); break;
-        case 4: isEmpty(); break;
-        case 5: top(); break;
-        default: printf("\nThere is no such command");
-    }
+      switch(operation){
+         case 1: display(); break;
+         case 2: push(); break;
+         case 3: pop(); break;
+         case 4: isEmpty(); break;
+         case 5: top(); break;
+         default: printf("\nThere is no such command");
+      }
 
-    } while (operation != 6);
+   } while (operation != 0);
 
-    return 0;
+   return 0;
 }
 
 void isEmpty(){
